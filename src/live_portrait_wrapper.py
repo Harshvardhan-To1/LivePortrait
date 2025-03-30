@@ -280,7 +280,7 @@ class LivePortraitWrapper(object):
         kp_driving: BxNx3
         """
         # The line 18 in Algorithm 1: D(W(f_s; x_s, x′_d,i)）
-        with torch.no_grad(), self.inference_ctx():
+        with torch.no_grad():
             if self.compile:
                 # Mark the beginning of a new CUDA Graph step
                 torch.compiler.cudagraph_mark_step_begin()
