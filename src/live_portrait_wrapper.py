@@ -134,7 +134,7 @@ class LivePortraitWrapper(object):
         flag_refine_info: whether to trandform the pose to degrees and the dimention of the reshape
         return: A dict contains keys: 'pitch', 'yaw', 'roll', 't', 'exp', 'scale', 'kp'
         """
-        with torch.no_grad(), self.inference_ctx():
+        with torch.no_grad():
             kp_info = self.motion_extractor(x)
 
             if self.inference_cfg.flag_use_half_precision:
